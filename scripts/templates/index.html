@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>flask-bootstrap example</title>
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="static/main.css">
+	<style>
+.pagination .page-link {
+    background: white;
+    color: black;
+}
+
+	</style>	
+  </head>
+  <body>
+    <div class = "bg-primary">
+    <div class = "container jumbotron jumbotron-fluid bg-transparent text-white">
+      <h1 class = "display-4">Python Flask Pagination Example</h1>
+
+    </div>
+  </div>
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>			
+              <th>id</th>
+              <th>patient_name</th>
+              <th>drug_name</th>
+              <th>gender</th>
+              <th>cost</th>                           
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in data %}
+            <tr>
+              <td>{{ item['id'] }}</td>
+              <td>{{ item['patient_name'] }}</td>
+              <td>{{ item['drug_name'] }}</td>
+              <td>{{ item['gender'] }}</td>
+              <td>{{ item['cost'] }}</td>              
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {{ pagination.links }}
+    </div>
+  </body>
+</html>
